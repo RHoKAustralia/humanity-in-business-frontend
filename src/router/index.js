@@ -33,7 +33,7 @@ export default new Router({
     ...demoRoutes,
     {
       path: '*',
-      redirect: { name: 'dashboard' },
+      redirect: { name: 'login' },
     },
     {
       path: '/auth',
@@ -48,6 +48,11 @@ export default new Router({
           name: 'signup',
           path: 'signup',
           component: lazyLoading('auth/signup/Signup'),
+        },
+        {
+          name: 'sdg',
+          path: 'sdg',
+          component: lazyLoading('auth/sdg/SDGSelect'),
         },
         {
           path: '',
