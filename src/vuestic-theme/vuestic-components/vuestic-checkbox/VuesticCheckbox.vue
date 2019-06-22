@@ -158,7 +158,7 @@ export default {
         height: 1.4rem;
         width: 1.4rem;
         color: $white;
-        background-color: $vue-green;
+        background-color: #E89A43;
         border: 0;
       }
       .vuestic-checkbox--readonly#{&} {
