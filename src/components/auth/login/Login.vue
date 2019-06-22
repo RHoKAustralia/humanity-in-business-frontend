@@ -27,18 +27,52 @@
         <router-link class='link flex-center pl-2 text-center' :to="{name: 'signup'}">
           {{ $t('auth.createAccount') }}
         </router-link>
+          <img src="./linked-in.svg" class="">
       </div>
     </form>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'login',
 }
+
 </script>
 
 <style lang="scss">
+
+.vuestic-checkbox__square::before {
+  background-color: #E89A43 !important;
+  color: #E89A43 !important;
+}
+
+.link {
+  color: #E89A43;
+}
+
+.link:hover {
+  color: #DE8143;
+}
+
+.control-label {
+  color: #E89A43 !important;
+}
+
+.btn.btn-primary {
+  background-color: #E89A43;
+  box-shadow: 2px 2px 2px 1px rgba(255, 193, 127, 0.5);
+}
+
+.btn.btn-primary:hover {
+  background-color: #DE8143;
+}
+
+.link.flex-center.pl-2.text-center {
+  color: #E89A43;
+}
+
 .login {
 
   @include media-breakpoint-down(md) {
