@@ -50,15 +50,14 @@ export default new Router({
           component: lazyLoading('auth/signup/Signup'),
         },
         {
-          name: 'sdg',
-          path: 'sdg',
-          component: lazyLoading('auth/sdg/SDGSelect'),
-        },
-        {
           path: '',
           redirect: { name: 'login' },
         },
       ],
+    },
+    {
+      path: '/sdg',
+      component: lazyLoading('auth/sdg/SDGSelect'),
     },
     {
       path: '/404',

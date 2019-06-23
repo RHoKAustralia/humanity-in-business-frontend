@@ -148,7 +148,7 @@ $wizard-label-padding: 0 0.6rem;
       color: $brand-primary;
     }
     &.current .wizard-step-label {
-      color: $vue-darkest-blue;
+      color: #E89A43;
     }
   }
 }

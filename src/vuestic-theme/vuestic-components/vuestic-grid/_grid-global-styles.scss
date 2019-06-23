@@ -55,7 +55,7 @@
 .va-row {
   @include va-layout();
   &.row {
-    flex-direction: row;
+    flex-direction: row-reverse;
 
     &.reverse {
       flex-direction: row-reverse;
@@ -66,7 +66,7 @@
     flex-direction: column;
 
     &.reverse {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
 
     > .flex {
@@ -253,4 +253,3 @@
 .ellipsis {
   @include va-ellipsis();
 }
-
