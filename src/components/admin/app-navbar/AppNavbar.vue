@@ -1,45 +1,35 @@
 <template>
-  <vuestic-navbar>
+  <hib-navbar>
     <header-selector slot="selector" :isOpen.sync="valueProxy"/>
     <span slot="logo">
-      <vuestic-icon-vuestic/>
+      <hib-icon/>
     </span>
     <span slot="center">
-      {{$t('navbar.messageUs')}}&nbsp;<a href="mailto:hello@epicmax.co">hello@epicmax.co</a>
     </span>
 
-    <message-dropdown class="col nav-item"/>
-    <notification-dropdown class="col nav-item"/>
-    <language-dropdown class="col nav-item"/>
     <profile-dropdown class="col nav-item">
+      <!-- todo use the profile image here -->
       <img src="https://i.imgur.com/nfa5itq.png"/>
     </profile-dropdown>
-  </vuestic-navbar>
+  </hib-navbar>
 
 </template>
 
 <script>
-import VuesticIconVuestic
-  from '../../../vuestic-theme/vuestic-components/vuestic-icon/VuesticIconVuestic'
-import VuesticNavbar
-  from '../../../vuestic-theme/vuestic-components/vuestic-navbar/VuesticNavbar'
+import HibIcon
+  from '../../../hib-theme/hib-components/hib-icon/HibIcon'
+import HibNavbar
+  from '../../../hib-theme/hib-components/hib-navbar/HibNavbar'
 import HeaderSelector from './components/HeaderSelector'
-
-import LanguageDropdown from './components/dropdowns/LanguageDropdown'
 import ProfileDropdown from './components/dropdowns/ProfileDropdown'
-import NotificationDropdown from './components/dropdowns/NotificationDropdown'
-import MessageDropdown from './components/dropdowns/MessageDropdown'
 
 export default {
   name: 'app-navbar',
 
   components: {
-    VuesticIconVuestic,
-    VuesticNavbar,
+    HibIcon,
+    HibNavbar,
     HeaderSelector,
-    MessageDropdown,
-    NotificationDropdown,
-    LanguageDropdown,
     ProfileDropdown,
   },
   props: {
