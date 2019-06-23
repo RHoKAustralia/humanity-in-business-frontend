@@ -6,15 +6,17 @@
       </router-link>
     </div>
     <div class="main va-row">
-      <div class="auth-content flex lg6 xs12 fill-height">
+      <div class="auth-content flex lg8 xs12 fill-height">
         <div class="flex-center">
           <router-view/>
         </div>
       </div>
-      <div class="">
-        <div class="">
-          <div class=""/>
-          <img src="./login/HIB-logo.jpg" class="logo-hib" alt="">
+      <div class="auth-layout__auth-wallpaper flex md4">
+        <div class="flex-center">
+          <div class="auth-layout__auth-wallpaper__cross-line"/>
+            <router-link class="auth-layout__auth-wallpaper__logo" :to="{path: '/'}">
+            <vuestic-icon-vuestic/>
+          </router-link>
         </div>
       </div>
     </div>
@@ -47,6 +49,7 @@ export default {
     position: relative;
     background-color: $top-nav-bg;
     overflow: hidden;
+    background-image: url('backgroundimg.png');
     @include va-flex-center();
     &__logo {
       z-index: 2;
@@ -60,13 +63,7 @@ export default {
     }
 
     &__cross-line {
-      z-index: 1;
-      position: absolute;
-      background-color: $auth-wallpaper-oblique-line;
-      left: calc(50% - 27% / 2);
-      transform: rotate(15deg);
-      width: 27%;
-      height: 115%;
+      background-image: url('backgroundimg.png');
     }
   }
 
