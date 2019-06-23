@@ -63,6 +63,9 @@ export default {
       email: '',
       password: '',
       agreedToTerms: true,
+      company: '',
+      skills: '',
+      name: '',
     }
   },
   methods: {
