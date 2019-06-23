@@ -39,7 +39,9 @@ export default {
 <style lang="scss">
 .vuestic-layout {
   .content-wrap {
-    margin-left: $content-wrap-ml;
+    // margin-left: $content-wrap-ml;
+    margin-left: 250px;
+    margin-right: 250px;
     transition: margin-left 0.3s ease;
     padding: $layout-padding $layout-padding-right $content-wrap-pb 0;
     .pre-loader {
@@ -66,7 +68,7 @@ export default {
       }
     }
   }
-  
+
   .made-by-footer {
     display: flex;
     justify-content: center;
