@@ -34,7 +34,7 @@ import VuesticCard
   from '../../vuestic-theme/vuestic-components/vuestic-card/VuesticCard'
 import ChallengeService
   from '../../services/challengeService'
-import challengeService from '../../services/challengeService';
+import challengeService from '../../services/challengeService'
 
 export default {
   name: 'dashboard',
@@ -42,8 +42,8 @@ export default {
     VuesticCard
   },
 
-  mounted() {
-    this.getChallenges();
+  mounted () {
+    this.getChallenges()
   },
 
   data () {
@@ -65,8 +65,8 @@ export default {
     getChallenges () {
       challengeService.getUpcomingChallenges().then(
         response => {
-          this.challenges = response.data;
-        });
+          this.challenges = response.data
+        })
     }
   }
 }
