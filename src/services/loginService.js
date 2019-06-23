@@ -13,6 +13,20 @@ function register (user) {
   })
 }
 
+function login (user) {
+  return axios({
+    method: 'post',
+    header: {
+      'Access-Control-Max-Age': 100
+    },
+    url: `${baseUrl}/login`,
+    data: user
+  })
+    .then(loginResult => {
+      return loginResult.data.success
+    })
+}
+
 export default {
-  register
+  register, login
 }
