@@ -71,7 +71,7 @@ export default {
   }
 
   h2 {
-    text-align: center;		
+    text-align: center;
 		.h2 {
     font-size: 2rem;
     margin-top: -20px auto;
