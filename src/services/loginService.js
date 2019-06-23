@@ -27,6 +27,23 @@ function login (user) {
     })
 }
 
+function addSdgToUser (userId, sdgs) {
+  return axios({
+    method: 'post',
+    header: {
+      'Access-Control-Max-Age': 100
+    },
+    url: `${baseUrl}/addSDG`,
+    data: {
+      user_id: userId,
+      sdg_ids: sdgs
+    }
+  })
+    .then(loginResult => {
+      return loginResult.data.success
+    })
+}
+
 export default {
-  register, login
+  register, login, addSdgToUser
 }

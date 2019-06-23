@@ -57,7 +57,8 @@ export default {
         password: this.password,
       }).then(loginSuccess => {
         if (loginSuccess !== false) {
-          this.$router.push({ name: 'sdg' })
+          this.$router.push({ name: 'sdg',
+            params: { id: loginSuccess } })
         } else {
           this.loginError = 'Invalid credentials'
         }
