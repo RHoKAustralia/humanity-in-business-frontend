@@ -56,8 +56,14 @@ export default new Router({
       ],
     },
     {
+      name: 'sdg',
       path: '/sdg',
       component: lazyLoading('auth/sdg/SDGSelect'),
+    },
+    {
+      name: 'done',
+      path: '/done',
+      component: lazyLoading('custom/Done'),
     },
     {
       path: '/404',

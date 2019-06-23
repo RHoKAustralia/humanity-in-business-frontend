@@ -1,5 +1,6 @@
 <template>
   <div id="page-container">
+    <SignUpHeader currentPage="sdg"/>
     <div class="sdg-container">
       <h1> Choose your fights</h1>
       <h3> We'll use these to show you cool stuff.</h3>
@@ -158,20 +159,21 @@
           </div>
         </div>
       </div>
-      <div
-      class="d-flex align--center justify--space-between down-container">
-      <button class="btn btn-primary" type="button" v-on:click="sdgSubmit">
-        Done
-      </button>
-    </div>
+      <div class="d-flex align--center justify--space-between down-container">
+        <button class="btn btn-primary" type="button" v-on:click="sdgSubmit">
+          Done
+        </button>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>
+import SignUpHeader from './../../custom/SignUpHeader'
+
 export default {
   name: 'sdg',
+  components: { SignUpHeader },
   data () {
     return { checkedSDG: [] }
   },

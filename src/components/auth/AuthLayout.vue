@@ -5,7 +5,8 @@
         <vuestic-icon-vuestic/>
       </router-link>
     </div>
-    <div class="main va-row">
+    <div class="main va-row" style="
+    background-color: #34495e;">
       <div class="auth-content flex lg8 xs12 fill-height">
         <div class="flex-center">
           <router-view/>
