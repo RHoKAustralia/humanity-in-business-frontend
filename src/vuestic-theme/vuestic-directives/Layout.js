@@ -26,11 +26,11 @@ export default {
 
     navbar.addEventListener('click', el.resizeWindow)
 
-    sidebar.addEventListener('click', () => {
-      if (document.documentElement.clientWidth < mobileWidth) {
-        sidebar.classList.add('sidebar-hidden')
-      }
-    })
+    // sidebar.addEventListener('click', () => {
+    //   if (document.documentElement.clientWidth < mobileWidth) {
+    //     sidebar.classList.add('sidebar-hidden')
+    //   }
+    // })
   },
   unbind: (el) => {
     el.removeEventListener('click', el.resizeWindow)
