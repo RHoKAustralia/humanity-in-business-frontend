@@ -14,9 +14,7 @@
       <div class="">
         <div class="">
           <div class=""/>
-          <router-link :to="{path: '/'}">
-            <img src="./login/HIB-logo.jpg" class="logo-hib" alt="">
-          </router-link>
+          <img src="./login/HIB-logo.jpg" class="logo-hib" alt="">
         </div>
       </div>
     </div>
