@@ -1,7 +1,12 @@
 <template>
   <div class="signup">
     <h2>{{ $t('auth.createNewAccount') }}</h2>
+<<<<<<< HEAD
     <form method="post" action="/#/auth/signup" name="signup"><div class="form-group">
+=======
+    <form method="post" action="/#/auth/signup" name="signup">
+			<div class="form-group">
+>>>>>>> 77e6ba3611064d43751d5bd71756506647e0cefd
 				<div class="input-group">
 					<input type="text" id="name" v-model="name" required="required"/>
 					<label class="control-label" for="name">{{ $t('Name') }}</label><i class="bar"></i>
