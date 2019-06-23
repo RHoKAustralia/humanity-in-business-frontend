@@ -53,7 +53,6 @@
 
 <script>
 import loginService from '../../../services/loginService'
-
 export default {
   name: 'signup',
   data () {
@@ -81,7 +80,6 @@ export default {
     padding-right: 2rem;
     padding-left: 2rem;
   }
-
   h2 {
     text-align: center;
 		.h2 {
@@ -90,7 +88,6 @@ export default {
 }
   }
   width: 21.375rem;
-
   .down-container {
     margin-top: 2.6875rem;
   }
