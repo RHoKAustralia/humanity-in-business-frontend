@@ -1,16 +1,16 @@
 <template>
   <div class="signup">
     <h2>{{ $t('auth.createNewAccount') }}</h2>
-    <form method="post" action="/#/auth/signup" name="signup">
+    <form method="post" @submit.prevent="register" name="signup">
       <div class="form-group">
         <div class="input-group">
-          <input type="text" id="email" required="required"/>
+          <input type="text" v-model="email" required="required"/>
           <label class="control-label" for="email">{{ $t('auth.email') }}</label><i class="bar"></i>
         </div>
       </div>
       <div class="form-group">
         <div class="input-group">
-          <input type="password" id="password" required="required"/>
+          <input type="password" v-model="password" required="required"/>
           <label class="control-label" for="password">{{ $t('auth.password') }}</label><i class="bar"></i>
         </div>
       </div>
@@ -34,13 +34,25 @@
 </template>
 
 <script>
+import loginService from '../../../services/loginService'
+
 export default {
   name: 'signup',
   data () {
     return {
+      email: '',
+      password: '',
       agreedToTerms: true,
     }
   },
+  methods: {
+    register () {
+      loginService.register({
+        email: this.email,
+        password: this.password,
+      })
+    },
+  }
 }
 </script>
 
