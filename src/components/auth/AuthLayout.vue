@@ -6,18 +6,20 @@
       </router-link>
     </div>
     <div class="main va-row" style="
-    background-color: #34495e;">
+    background: #FFFBF0;">
+		<div class="auth-layout__auth-wallpaper flex flex-start slogan md4">
+
+				<div class="auth-layout__auth-wallpaper__cross-line"/>
+
+						<h4 class="slogan">Join the movement that creates
+							<span class="slogan-bit auth-layout">purposeful</span> businesses.</h4>
+
+				</router-link>
+
+		</div>
       <div class="auth-content flex lg8 xs12 fill-height">
         <div class="flex-center">
           <router-view/>
-        </div>
-      </div>
-      <div class="auth-layout__auth-wallpaper flex md4">
-        <div class="flex-center">
-          <div class="auth-layout__auth-wallpaper__cross-line"/>
-            <router-link class="auth-layout__auth-wallpaper__logo" :to="{path: '/'}">
-            <vuestic-icon-vuestic/>
-          </router-link>
         </div>
       </div>
     </div>
@@ -36,6 +38,22 @@ export default {
 </script>
 
 <style lang="scss">
+.slogan {
+	width: 250px;
+	padding: 10px 0 0 50px;
+	color: #E89A43;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.slogan-bit {
+	color: #2100ED;
+}
+
+.flex-start {
+	align-items: flex-start;
+	align-content: flex-start;
+}
 
 .logo-hib {
   width: 50px;
@@ -44,17 +62,19 @@ export default {
 
 .auth-layout {
   height: 100vh;
-  margin: 0;
+	background-color: #FFFBF0;
 
   &__auth-wallpaper {
     position: relative;
     background-color: $top-nav-bg;
     overflow: hidden;
-    background-image: url('Group.png');
+    background-image: url('comp-heart-illo.png');
 		background-repeat: no-repeat;
-		margin-top: 150px;
-		background-color: #34495e;
-    @include va-flex-center();
+		background-size: contain;
+		background-position: bottom;
+		background-color: #FFFBF0;
+		align-items: flex-start;
+    margin-bottom: 100px;
     &__logo {
       z-index: 2;
       position: absolute;
