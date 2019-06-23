@@ -1,10 +1,14 @@
 <template>
   <div class="login">
     <h2>{{ $t('auth.welcome') }}</h2>
-    <form method="post" action="/auth/login" name="login">
+
+    <div v-show="loginError" class="input-group text-danger">
+        {{ loginError }}
+    </div>
+    <form method="post" @submit.prevent="login" name="login">
       <div class="form-group">
         <div class="input-group">
-          <input type="text" id="email" required="required"/>
+          <input type="text" v-model="email" required="required"/>
           <label class="control-label" for="email">
             {{ $t('auth.email') }}
           </label>
@@ -13,7 +17,7 @@
       </div>
       <div class="form-group">
         <div class="input-group">
-          <input type="password" id="password" required="required"/>
+          <input type="password" v-model="password" required="required"/>
           <label class="control-label" for="password">
             {{ $t('auth.password') }}
           </label>
@@ -34,9 +38,33 @@
 </template>
 
 <script>
+import loginService from '../../../services/loginService'
 
 export default {
   name: 'login',
+  data () {
+    return {
+      email: '',
+      password: '',
+      loginError: null
+    }
+  },
+  methods: {
+    login () {
+      this.loginError = null
+      loginService.login({
+        email: this.email,
+        password: this.password,
+      }).then(loginSuccess => {
+        if (loginSuccess !== false) {
+          this.$router.push({ name: 'sdg',
+            params: { id: loginSuccess } })
+        } else {
+          this.loginError = 'Invalid credentials'
+        }
+      })
+    },
+  }
 }
 
 </script>

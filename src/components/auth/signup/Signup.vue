@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <h2>{{ $t('auth.createNewAccount') }}</h2>
-    <form method="post" action="/#/auth/signup" name="signup">
+    <form method="post" @submit.prevent="register" name="signup">
 			<div class="form-group">
 				<div class="input-group">
 					<input type="text" id="name" v-model="name" required="required"/>
@@ -63,9 +63,6 @@ export default {
       email: '',
       password: '',
       agreedToTerms: true,
-      company: '',
-      skills: '',
-      name: '',
     }
   },
   methods: {

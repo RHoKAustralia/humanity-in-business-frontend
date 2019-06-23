@@ -170,16 +170,18 @@
 
 <script>
 import SignUpHeader from './../../custom/SignUpHeader'
+import loginService from '../../../services/loginService'
 
 export default {
   name: 'sdg',
   components: { SignUpHeader },
+  props: ['id'],
   data () {
     return { checkedSDG: [] }
   },
   methods: {
     sdgSubmit: function (event) {
-      console.log(this.checkedSDG)
+      loginService.addSdgToUser(this.id, this.checkedSDG)
     }
   }
 }

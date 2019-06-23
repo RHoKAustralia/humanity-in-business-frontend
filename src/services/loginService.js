@@ -13,6 +13,37 @@ function register (user) {
   })
 }
 
+function login (user) {
+  return axios({
+    method: 'post',
+    header: {
+      'Access-Control-Max-Age': 100
+    },
+    url: `${baseUrl}/login`,
+    data: user
+  })
+    .then(loginResult => {
+      return loginResult.data.success
+    })
+}
+
+function addSdgToUser (userId, sdgs) {
+  return axios({
+    method: 'post',
+    header: {
+      'Access-Control-Max-Age': 100
+    },
+    url: `${baseUrl}/addSDG`,
+    data: {
+      user_id: userId,
+      sdg_ids: sdgs
+    }
+  })
+    .then(loginResult => {
+      return loginResult.data.success
+    })
+}
+
 export default {
-  register
+  register, login, addSdgToUser
 }
