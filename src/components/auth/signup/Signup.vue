@@ -57,6 +57,9 @@ export default {
   name: 'signup',
   data () {
     return {
+      name: '',
+      company: '',
+      skills: '',
       email: '',
       password: '',
       agreedToTerms: true,
