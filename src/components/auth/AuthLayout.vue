@@ -5,7 +5,8 @@
         <vuestic-icon-vuestic/>
       </router-link>
     </div>
-    <div class="main va-row">
+    <div class="main va-row" style="
+    background-color: #34495e;">
       <div class="auth-content flex lg8 xs12 fill-height">
         <div class="flex-center">
           <router-view/>
@@ -49,7 +50,10 @@ export default {
     position: relative;
     background-color: $top-nav-bg;
     overflow: hidden;
-    background-image: url('backgroundimg.png');
+    background-image: url('Group.png');
+		background-repeat: no-repeat;
+		margin-top: 150px;
+		background-color: #34495e;
     @include va-flex-center();
     &__logo {
       z-index: 2;
