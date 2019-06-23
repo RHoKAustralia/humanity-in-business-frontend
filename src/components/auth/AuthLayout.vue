@@ -11,11 +11,11 @@
           <router-view/>
         </div>
       </div>
-      <div class="auth-layout__auth-wallpaper flex md6">
-        <div class="flex-center">
-          <div class="auth-layout__auth-wallpaper__cross-line"/>
-          <router-link class="auth-layout__auth-wallpaper__logo" :to="{path: '/'}">
-            <vuestic-icon-vuestic/>
+      <div class="">
+        <div class="">
+          <div class=""/>
+          <router-link :to="{path: '/'}">
+            <img src="./login/HIB-logo.jpg" class="logo-hib" alt="">
           </router-link>
         </div>
       </div>
@@ -35,6 +35,12 @@ export default {
 </script>
 
 <style lang="scss">
+
+.logo-hib {
+  width: 50px;
+  height: 50px;
+}
+
 .auth-layout {
   height: 100vh;
   margin: 0;
