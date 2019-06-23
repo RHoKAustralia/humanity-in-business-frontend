@@ -44,6 +44,7 @@ export default {
 	color: #E89A43;
   font-weight: bold;
   font-size: 30px;
+  line-height: 31px;
 }
 
 .slogan-bit {
