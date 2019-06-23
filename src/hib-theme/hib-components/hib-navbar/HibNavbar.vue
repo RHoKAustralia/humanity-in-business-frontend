@@ -47,6 +47,7 @@ export default {
     margin: 0;
   }
 
+  box-shadow: 0px 5px 5px 1px whitesmoke;
   height: $top-nav-height;
   padding-left: $nav-padding-left;
   padding-right: $nav-padding-right;
