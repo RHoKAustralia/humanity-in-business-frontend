@@ -12,6 +12,7 @@ import router from './router'
 import VuesticPlugin from '@/vuestic-theme/vuestic-plugin'
 import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
+import ApiService from '@/common/api.service'
 
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)
@@ -27,6 +28,8 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from) => {
   store.commit('setLoading', false)
 })
+
+ApiService.init()
 
 /* eslint-disable no-new */
 

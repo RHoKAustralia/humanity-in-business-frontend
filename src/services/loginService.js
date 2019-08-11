@@ -11,20 +11,6 @@ function register (user) {
   })
 }
 
-function login (user) {
-  return axios({
-    method: 'post',
-    header: {
-      'Access-Control-Max-Age': 100
-    },
-    url: `${process.env.VUE_APP_API_ENDPOINT}/login`,
-    data: user
-  })
-    .then(loginResult => {
-      return loginResult.data.success
-    })
-}
-
 function addSdgToUser (userId, sdgs) {
   return axios({
     method: 'post',
@@ -43,5 +29,5 @@ function addSdgToUser (userId, sdgs) {
 }
 
 export default {
-  register, login, addSdgToUser
+  register, addSdgToUser
 }

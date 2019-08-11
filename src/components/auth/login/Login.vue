@@ -2,10 +2,10 @@
   <div class="login">
     <h2>{{ $t('auth.welcome') }}</h2>
 
-    <div v-show="loginError" class="input-group text-danger">
-        {{ loginError }}
+    <div v-if="errors" class="input-group text-danger">
+      <li v-for="(v, k) in errors" :key="k">{{ k }} {{ v | error }}</li>
     </div>
-    <form method="post" @submit.prevent="login" name="login">
+    <form v-on:submit.prevent="onSubmit(email, password)">
       <div class="form-group">
         <div class="input-group">
           <input type="text" v-model="email" required="required"/>
@@ -38,32 +38,28 @@
 </template>
 
 <script>
-import loginService from '../../../services/loginService'
+import { mapState } from 'vuex'
+import { LOGIN } from '@/store/actions/auth'
 
 export default {
-  name: 'login',
+  name: 'Login',
   data () {
     return {
       email: '',
-      password: '',
-      loginError: null
+      password: ''
     }
   },
   methods: {
-    login () {
-      this.loginError = null
-      loginService.login({
-        email: this.email,
-        password: this.password,
-      }).then(loginSuccess => {
-        if (loginSuccess !== false) {
-          this.$router.push({ name: 'sdg',
-            params: { id: loginSuccess } })
-        } else {
-          this.loginError = 'Invalid credentials'
-        }
-      })
-    },
+    onSubmit (email, password) {
+      this.$store
+        .dispatch(LOGIN, { email, password })
+        .then(() => this.$router.push({ name: '' })) // @todo add the dashboard route
+    }
+  },
+  computed: {
+    ...mapState({
+      errors: state => state.auth.errors
+    })
   }
 }
 
