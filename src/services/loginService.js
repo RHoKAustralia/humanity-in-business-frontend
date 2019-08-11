@@ -1,14 +1,12 @@
 import axios from 'axios/index'
 
-const baseUrl = 'http://ec2-18-191-57-240.us-east-2.compute.amazonaws.com:8080'
-
 function register (user) {
   return axios({
     method: 'post',
     header: {
       'Access-Control-Max-Age': 100
     },
-    url: `${baseUrl}/register`,
+    url: `${process.env.VUE_APP_API_ENDPOINT}/register`,
     data: user
   })
 }
@@ -19,7 +17,7 @@ function login (user) {
     header: {
       'Access-Control-Max-Age': 100
     },
-    url: `${baseUrl}/login`,
+    url: `${process.env.VUE_APP_API_ENDPOINT}/login`,
     data: user
   })
     .then(loginResult => {
@@ -33,7 +31,7 @@ function addSdgToUser (userId, sdgs) {
     header: {
       'Access-Control-Max-Age': 100
     },
-    url: `${baseUrl}/addSDG`,
+    url: `${process.env.VUE_APP_API_ENDPOINT}/addSDG`,
     data: {
       user_id: userId,
       sdg_ids: sdgs
