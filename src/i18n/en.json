@@ -9,7 +9,10 @@
     "password": "Password",
     "signUp": "Sign Up",
     "termsOfUse": "Terms of Use.",
-    "welcome": "Humanity in Business"
+    "welcome": "Humanity in Business",
+    "name": "Name",
+    "company": "Company",
+    "Skills": "skills"
   },
   "breadcrumbs": {
     "home": "Home"

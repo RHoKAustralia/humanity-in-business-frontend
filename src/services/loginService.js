@@ -1,16 +1,5 @@
 import axios from 'axios/index'
 
-function register (user) {
-  return axios({
-    method: 'post',
-    header: {
-      'Access-Control-Max-Age': 100
-    },
-    url: `${process.env.VUE_APP_API_ENDPOINT}/register`,
-    data: user
-  })
-}
-
 function addSdgToUser (userId, sdgs) {
   return axios({
     method: 'post',
@@ -29,5 +18,5 @@ function addSdgToUser (userId, sdgs) {
 }
 
 export default {
-  register, addSdgToUser
+  addSdgToUser
 }

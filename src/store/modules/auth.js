@@ -39,9 +39,11 @@ const actions = {
   [LOGOUT] (context) {
     context.commit(PURGE_AUTH)
   },
-  [REGISTER] (context, credentials) {
+  [REGISTER] (context, registrationData) {
     return new Promise((resolve, reject) => {
-      ApiService.post('register', { user: credentials })
+      // @todo this call needs to be tested once we know that backend will
+      // accept all the registration data being sent
+      ApiService.post('register', { user: registrationData })
         .then(({ data }) => {
           context.commit(SET_AUTH, data.user)
           resolve(data)

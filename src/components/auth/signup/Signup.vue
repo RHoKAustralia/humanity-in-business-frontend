@@ -1,25 +1,25 @@
 <template>
   <div class="signup">
     <h2>{{ $t('auth.createNewAccount') }}</h2>
-    <form method="post" @submit.prevent="register" name="signup">
-			<div class="form-group">
-				<div class="input-group">
-					<input type="text" id="name" v-model="name" required="required"/>
-					<label class="control-label" for="name">{{ $t('Name') }}</label><i class="bar"></i>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="input-group">
-					<input type="text" id="company" v-model="company" required="required"/>
-					<label class="control-label" for="company">{{ $t('Company') }}</label><i class="bar"></i>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="input-group">
-					<input type="text" id="skills" v-model="skills" required="required"/>
-					<label class="control-label" for="skils">{{ $t('Skills') }}</label><i class="bar"></i>
-				</div>
-			</div>
+    <form method="post" v-on:submit.prevent="onSubmit(name, company, skills, email, password, agreedToTerms)">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" id="name" v-model="name" required="required"/>
+          <label class="control-label" for="name">{{ $t('auth.name') }}</label><i class="bar"></i>
+          </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" id="company" v-model="company" required="required"/>
+              <label class="control-label" for="company">{{ $t('auth.company') }}</label><i class="bar"></i>
+              </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" id="skills" v-model="skills" required="required"/>
+                  <label class="control-label" for="skils">{{ $t('auth.skills') }}</label><i class="bar"></i>
+                  </div>
+                  </div>
       <div class="form-group">
         <div class="input-group">
           <input type="text" id="email" v-model="email" required="required"/>
@@ -52,9 +52,11 @@
 </template>
 
 <script>
-import loginService from '../../../services/loginService'
+import { mapState } from 'vuex'
+import { REGISTER } from '@/store/actions/auth'
+
 export default {
-  name: 'signup',
+  name: 'Signup',
   data () {
     return {
       name: '',
@@ -66,12 +68,16 @@ export default {
     }
   },
   methods: {
-    register () {
-      loginService.register({
-        email: this.email,
-        password: this.password,
-      })
-    },
+    onSubmit (name, company, skills, email, password, agreedToTerms) {
+      this.$store
+        .dispatch(REGISTER, { name, company, skills, email, password, agreedToTerms })
+        .then(() => this.$router.push({ name: '' })) // @todo add the next route
+    }
+  },
+  computed: {
+    ...mapState({
+      errors: state => state.auth.errors // @todo show this error on the markup
+    })
   }
 }
 </script>
@@ -85,7 +91,7 @@ export default {
   }
   h2 {
     text-align: center;
-		.h2 {
+    .h2 {
     font-size: 2rem;
     margin-top: -20px auto;
 }
