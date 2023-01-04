@@ -57,9 +57,9 @@
     "vuex-router-sync": "5.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-standard": "^3.0.5",
     "autoprefixer": "9.1.5",
     "chalk": "2.4.1",
